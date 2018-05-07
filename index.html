@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>NS3 Download | Install | Run</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="css/util.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <!--===============================================================================================-->
+</head>
+
+<body>
+
+
+    <div class="limiter">
+        <div class="container-login100">
+
+            <div class="wrap-login100">
+			<span class="login100-form-title">
+						NS3 Download Install and Run
+
+						<font size="2"><br>http://github.com/shiveshnavin</font>
+					</span>
+
+
+
+			<span class="login100-form-title">
+						 <a href="DCN6.docx">Download Lab File</a>
+					</span>
+
+                <div dir="ltr" style="max-width:21.001cm;margin-top:2cm; margin-bottom:2cm; margin-left:2cm; margin-right:2cm; writing-mode:lr-tb; ">
+                    <p class="P1">--------------RUNNING C PROGRAMS ON CentOS ---------------------&#13;</p>
+                    <p class="P1">&#13;</p>
+                    <p class="P1">&#13;</p>
+                    <p class="P1">Open Terminal ( Click Button on Top left Corner --&gt; System Tools --&gt; Terminal )&#13;</p><br>
+                    <p class="P1">&#13;</p>
+                    <p class="P1">cd ~/Desktop&#13;</p><br>
+                    <p class="P1">&#13;</p>
+                    <p class="P1">touch dvr.c&#13;</p><br>
+                    <p class="P1">&#13;</p>
+                    <p class="P1">gedit dvr.c&#13;</p><br>
+                    <p class="P1">&#13;</p>
+                    <p class="P1">[paste the c code on the window opened and save file CTRL+S , and switch back to terminal]&#13;</p><br>
+                    <p class="P1">&#13;</p>
+                    <p class="P1">gcc dvr.c&#13;</p><br>
+                    <p class="P1">&#13;</p>
+                    <p class="P1">./a.out&#13;</p><br>
+                    <p class="P1">&#13;</p>
+                    <p class="P1">------------------------------------------------  &#13;</p>
+                    <p class="P1">NS3 INSTALL and RUN On CentOS&#13;</p>
+                    <p class="P1">&#13;</p>
+                    <p class="P1">-------------------------INSTALL----------------------------- &#13;</p>
+                    <p class="P1">Open Terminal (  Click Button on Top left Corner --&gt; System Tools --&gt; Terminal ) &#13;</p><br>
+                    <p class="P1">&#13;</p>
+                    <p class="P1">cd ~/Desktop&#13;</p><br>
+                    <p class="P1">&#13;</p>
+                    <p class="P1">wget https://www.nsnam.org/release/ns-allinone-3.25.tar.bz2&#13;</p><br>
+                    <p class="P1">&#13;</p>
+                    <p class="P1">tar xvjf ns-allinone-3.25.tar.bz2&#13;</p><br>
+                    <p class="P1">&#13;</p><br>
+                    <p class="P1">yum install gcc g++ python python-dev mercurial bzr gdb valgrind gsl-bin libgsl0-dev libgsl0ldbl flex bison tcpdump sqlite sqlite3 libsqlite3-dev libxml2 libxml2-dev libgtk2.0-0 libgtk2.0-dev uncrustify doxygen graphviz imagemagick texlive texlive-latex-extra texlive-generic-extra texlive-generic-recommended texinfo dia texlive texlive-latex-extra texlive-extra-utils texlive-generic-recommended texi2html python-pygraphviz python-kiwi python-pygoocanvas libgoocanvas-dev python-pygccxml&#13;</p>
+                    <p class="P1">&#13;</p><br>
+                    <p class="P1">cd ns-allinone-3.25&#13;</p><br>
+                    <p class="P1">&#13;</p>
+                    <p class="P1">./build.py&#13;</p><br>
+                    <p class="P1">&#13;</p>
+                    <p class="P1">cd ns-3.25&#13;</p><br>
+                    <p class="P1">&#13;</p>
+                    <p class="P1">--------------------------RUN --------------------&#13;</p>
+                    <p class="P1">&#13;</p>
+                    <p class="P1">Delete all .cc files in ns-3.25/scratch  and copy first.cc from ns-3.25/examples/tutorial folder&#13;</p>
+                    <p class="P1">&#13;</p>
+                    <p class="P1">Open Terminal ( Click Button on Top left Corner --&gt; System Tools --&gt; Terminal ) &#13;</p>
+                    <p class="P1">&#13;</p>
+                    <p class="P1">cd ~/Desktop&#13;</p><br>
+                    <p class="P1">&#13;</p>
+                    <p class="P1">cd ns-allinone-3.25&#13;</p><br>
+                    <p class="P1">&#13;</p>
+                    <p class="P1">cd ns-3.25&#13;</p>
+                    <p class="P1">&#13;</p>
+                    <p class="P1">./waf --enable-examples --enable-tests&#13;</p><br>
+                    <p class="P1">&#13;</p>
+                    <p class="P1">./waf --run scratch/first&#13;</p><br>
+                    <p class="P1">&#13;</p>
+                    <p class="P1">&#13;</p>
+                    <p class="P1">--------------------ADDING ANIMATION AND RUN----------------&#13;</p>
+                    <p class="P1">&#13;</p>
+                    <p class="P1">Open scratch/first.cc and add these 2 lines at top (before using namespace ns3; )&#13;</p><br>
+                    <p class="P1">&#13;</p>
+                    <p class="P1">#include "ns3/netanim-module.h"&#13;</p>
+                    <p class="P1">#include "ns3/mobility-module.h"&#13;</p>
+                    <p class="P1">&#13;</p><br>
+                    <p class="P1">Add these lines at bottom , ( above Simulator::Run (); )&#13;</p><br>
+                    <p class="P1">&#13;</p>
+                    <p class="P1">&#13;</p>
+                    <p class="P1">AnimationInterface anim("first.xml");&#13;</p>
+                    <p class="P1">anim.AnimationInterface::SetConstantPosition(nodes.Get(0),10,25);&#13;</p>
+                    <p class="P1">anim.SetConstantPosition(nodes.Get(1),40,25);&#13;</p>
+                    <p class="P1">&#13;</p>
+                    <p class="P1">&#13;</p><br>
+                    <p class="P1">Open Terminal ( Click Button on Top left Corner --&gt; System Tools --&gt; Terminal ) &#13;</p>
+                    <p class="P1">&#13;</p>
+                    <p class="P1">cd ~/Desktop&#13;</p><br>
+                    <p class="P1">&#13;</p>
+                    <p class="P1">cd ns-allinone-3.25&#13;</p><br>
+                    <p class="P1">&#13;</p>
+                    <p class="P1">cd ns-3.25&#13;</p><br>
+                    <p class="P1">&#13;</p>
+                    <p class="P1">./waf --enable-examples --enable-tests&#13;</p><br>
+                    <p class="P1">&#13;</p>
+                    <p class="P1">./waf --run scratch/first&#13;</p><br>
+                    <p class="P1">&#13;</p>
+                    <p class="P1">Open Terminal ( Click Button on Top left Corner --&gt; System Tools --&gt; Terminal ) &#13;</p><br>
+                    <p class="P1">&#13;</p>
+                    <p class="P1">cd ~/Desktop&#13;</p><br>
+                    <p class="P1">&#13;</p>
+                    <p class="P1">cd ns-allinone-3.25&#13;</p><br>
+                    <p class="P1">&#13;</p>
+                    <p class="P1">cd netanim-3.107&#13;</p><br>
+                    <p class="P1">&#13;</p>
+                    <p class="P1">./NetAnim&#13;</p><br><br>
+                    <p class="P1">&#13;</p>
+                    <p class="P1">Browse for first.xml in ns-3.25 and click on Run&#13;</p><br>
+                    <p class="P1">&#13;</p>
+                    <p class="P1">(Animation code differs for different experiments)&#13;</p>
+                    <p class="P1">&#13;</p>
+                    <p class="P1">&#13;</p>
+                    <p class="P1">&#13;</p>
+                    <p class="P1">&#13;</p>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!--===============================================================================================-->
+    <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/bootstrap/js/popper.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/select2/select2.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/tilt/tilt.jquery.min.js"></script>
+    <script>
+        $('.js-tilt').tilt({
+            scale: 1.1
+        })
+    </script>
+    <!--===============================================================================================-->
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
